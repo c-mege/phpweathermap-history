@@ -32,4 +32,4 @@ NODE Historique
 
 ## Thanks
 
-Thanks for chatGPT for some snippets ;-)
+Thanks [jwhitaker](http://forums.cacti.net/memberlist.php?mode=viewprofile&u=29739) for the initial idea and [chatGPT](https://chat.openai.com/chat) for some snippets ;-)
