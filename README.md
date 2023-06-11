@@ -1,27 +1,23 @@
 # Weathermap History
 
-Ces fichiers permettent de conserver un historique des graphes weather map et de naviguer pour voir l'évolution du traffic réseau.
+Based on an initial idea from jwhitaker on [cacti forums](https://forums.cacti.net/viewtopic.php?t=40310), this script create an history of php weathermap maps.
+
+It parses all the maps in a source directory, archive them, and creates a web page galery showing them with dated links, and can also animate them.
 
 ## Installation
 
-Il faut ajouter un cron qui va sauvegarder les fichiers puis créer le fichier index permettant de les visualiser.
+*If you read that I'll assume you already have php weathermap installed and generating maps.*
 
-Comme les weathermaps ne sont générées "que" toutes les 5 minutes, le cron se lance toutes les 5 minutes : 
+To generate the galery, you'll need to add a cron with a user with correct rights :
 
-*/5  *    * * *   /opt/librenms/weathermapHistory.sh  >> /dev/null 2>&1
+`*/5  *    * * *   /opt/librenms/weathermapHistory.sh  >> /dev/null 2>&1`
+
+In my case, I use [libreNMS](https://www.librenms.org/), so this cron is for the `librenms` user.
 
 ## Fichier bash 
 
-Un seul fichier bash permet de sauvegarder les wm, et de générer l'index.html.
+One bash file will save the weathermaps, and generate the web galery, see inside this bash script for parameters.
 
-Voir ce fichier pour plus de détails.
+## Thanks
 
-
-## Idée initiale
-
-Largement inspiré de https://forums.cacti.net/viewtopic.php?t=40310
-mais amélioré, la solution initiale demandait un script, un fichier php, ne gérait qu'une seule map et ne faisait que lister sous forme de lien les maps.
-
-J'ai ajouté la gestion de toutes les maps existantes, la navigation, l'autoplay, bref j'ai rendu ça utile.
-Merci à chatGPT pour certains snippets ;-)
-
+Thanks for chatGPT for some snippets ;-)
