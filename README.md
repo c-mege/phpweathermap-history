@@ -6,7 +6,7 @@ It parses all the images generated maps in a source directory, archive them, and
 
 ## Installation
 
-*If you read that I'll assume you already have php weathermap installed and generating maps.*
+*you must have a phpweathermap working and generating maps for this script to work*
 
 To generate the galery, you'll need to add a cron with a user with correct rights :
 
