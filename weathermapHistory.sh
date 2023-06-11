@@ -12,39 +12,40 @@ HISTORY_DIR="/opt/librenms/html/plugins/Weathermap/output/history"
 DATE=`date '+%Y%m%d%H%M'`
 
 
-# première partie : gestion des fichiers images
-#   recopie dans le répertoire d'archivage
-#   et suppression des vieux fichiers
+# first part : image files management
+#   we copy them in the HISTORY_DIR
+#   and remove files older then 2 days (-mtime +2) 
 
 for file in "$IMAGE_DIR"/*.png ; do
 
-    # pour chaque image (donc map) générée par WM :
-    # Obtention du nom de fichier sans l'extension
+    # for each picture (generated weathermap) :
+    # get filename without extention
     name=$(basename "$file") ;
     name=${name%.*} ;
 
-    # Création d'un sous-répertoire avec le nom de fichier sans l'extension
+    # create a sub dir (we'll have a subdir for each weathermap)
     mkdir -p "$HISTORY_DIR/$name" ;
 
-    # Copie de l'image
+    # copy the picture
     cp ${file}  "$HISTORY_DIR/$name"/map_$DATE.png ;
 
-    # Suppression des anciens historiques
+    # removing older files
     find "$HISTORY_DIR/$name" -name "*.png" -mtime +2 -delete
 
 done
 
-# Deuxième partie : génération d'un fichier html pour parcourir ces images
+# second part : web page generation
+#
 for dir in "$HISTORY_DIR"/*/
 do
 
-    dir=${dir%*/} # Supprimer le slash à la fin du nom de répertoire
+    dir=${dir%*/} # removing trailing slash
     cd "$dir"
 
-    # Créer un tableau de noms de fichiers PNG dans le répertoire courant
+    # create a table of png names
     PNG_FILES=($(ls -c -r *.png))
 
-    # Écrire le début du fichier HTML
+    # beginning of HTML file
     cat <<EOF > index.html
 
             <!DOCTYPE html>
@@ -125,15 +126,6 @@ do
                     <ul>
 EOF
 
-    # show all historical maps
-    #    count=0
-    #    for FILE in "${PNG_FILES[@]}"
-    #    do
-    #        date_clean=$(echo $FILE | sed 's/map_\([0-9]\{4\}\)\([0-9]\{2\}\)\([0-9]\{2\}\)\([0-9]\{2\}\)\([0-9]\{2\}\).*\.png/\1-\2-\3\ \4:\5/' )
-    #        echo "<li><button onclick=\"loadImage($count)\">charger</button>&nbsp;<a href=\"$FILE\">${date_clean}</a></li>" >> index.html
-    #        ((count++))
-    #    done
-
     # Group files by day / hour
     count=0
     declare -A files
@@ -152,7 +144,7 @@ EOF
 
     unset files
 
-    # Écrire la fin du fichier HTML
+    # Wrinting end of HTML file
     cat <<EOF >> index.html
                     </ul>
                 </div>
@@ -161,7 +153,7 @@ EOF
         </html>
 EOF
 
-    # On remonte à la racine des historiques
+    # going back to weathermaps root
     cd "$HISTORY_DIR"
 
 done
