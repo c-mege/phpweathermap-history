@@ -1,14 +1,14 @@
 #!/bin/bash
 
-# petit scrip de sauvegarde et consultatyion des weathermaps :
+# script for saving and accessing weathermaps :
 # cmege 2023-03-13
 
-# paramètres :
-# répertoire dans lequel wm stocke les images
+# parameters :
+# where are stored the 'raw' weathermaps :
 IMAGE_DIR="/opt/librenms/html/plugins/Weathermap/output"
-# répertoire dans lequl on sauve l'historique
+# where do we save weathermaps history
 HISTORY_DIR="/opt/librenms/html/plugins/Weathermap/output/history"
-# attention, une modification du format de la date a des impacts sur le script
+# beware, this date format is used in the script, if you change it, you'll have to modify the script
 DATE=`date '+%Y%m%d%H%M'`
 
 
