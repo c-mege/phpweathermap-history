@@ -29,6 +29,8 @@ see inside this bash script for adjustements if needed.
 
 ## Tips
 
+### links
+
 To easily access history from your weather map, add a virtual device in your phpweathermaps : 
 
 ```
@@ -38,6 +40,15 @@ NODE Historique
         POSITION 1226 26
 ```
 The url will have to be adapted for each weathermap you generate.
+
+The `index.html` file generated creates a link pointing back to weathermap root so navigation is easy.
+
+### storage
+
+As each picture is saved, this can consume lot of diskspace, adjust the frequency of archiving via the crontab,
+
+and the number of history files kept in the bash script.
+
 
 ## Thanks
 
