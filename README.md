@@ -18,6 +18,18 @@ In my case, I use [libreNMS](https://www.librenms.org/), so this cron is for the
 
 One bash file will save the weathermaps, and generate the web galery, see inside this bash script for parameters.
 
+## Tips
+
+To easily access history from your weather map, add a virtual device in your phpweathermaps : 
+
+```
+NODE Historique
+        LABEL Historique
+        INFOURL http://10.201.10.34/plugins/Weathermap/output/history/cameras/index.html
+        POSITION 1226 26
+```
+
+
 ## Thanks
 
 Thanks for chatGPT for some snippets ;-)
