@@ -4,7 +4,7 @@
 # cmege 2023-03-13
 
 # parameters :
-# where are stored the 'raw' weathermaps :
+# where are stored the 'raw' weathermaps pictures :
 IMAGE_DIR="/opt/librenms/html/plugins/Weathermap/output"
 # where do we save weathermaps history
 HISTORY_DIR="/opt/librenms/html/plugins/Weathermap/output/history"
@@ -35,6 +35,9 @@ for file in "$IMAGE_DIR"/*.png ; do
 done
 
 # second part : web page generation
+#
+#  the <h1>Historique <a href="../../$(basename "$dir").html">Weathermap</a></h1>
+#  part points back to the weathermap url, change it to match your install
 #
 for dir in "$HISTORY_DIR"/*/
 do
