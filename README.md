@@ -16,7 +16,7 @@ In my case, I use [libreNMS](https://www.librenms.org/), so this cron is for the
 
 I update weathermaps every 5 minutes, so I also save them every 5 minutes. 
 
-Change this delay according to your generation rythm, and your achive needs.
+Change this delay according to your generation rythm, and your archive needs.
 
 ## bash file
 
