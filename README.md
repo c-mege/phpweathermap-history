@@ -13,13 +13,17 @@ To generate the galery, you'll need to add a cron with a user with correct right
 `*/5  *    * * *   /opt/librenms/weathermapHistory.sh  >> /dev/null 2>&1`
 
 In my case, I use [libreNMS](https://www.librenms.org/), so this cron is for the `librenms` user.
+
 I update weathermaps every 5 minutes, so I also save them every 5 minutes. 
+
 Change this delay according to your generation rythm, and your achive needs.
 
 ## bash file
 
-Ther is only one bash file that does all the magic :
-save the weathermaps, and generate the web galery, 
+There is only one bash file that does all the magic :
+
+- save the weathermaps, 
+- and generate the web galery
 
 see inside this bash script for adjustements if needed.
 
