@@ -2,7 +2,7 @@
 
 Based on an initial idea from jwhitaker on [cacti forums](https://forums.cacti.net/viewtopic.php?t=40310), this script create an history of php weathermap maps.
 
-It parses all the maps in a source directory, archive them, and creates a web page galery showing them with dated links, and can also animate them.
+It parses all the images generated maps in a source directory, archive them, and creates a web page galery showing them with dated links, and can also animate them.
 
 ## Installation
 
