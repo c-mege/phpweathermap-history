@@ -8,6 +8,8 @@ It parses all the images generated maps in a source directory, archive them, and
 
 *you must have a phpweathermap working and generating maps for this script to work*
 
+See the nice [network weathermap](https://www.network-weathermap.com/) for more information.
+
 To generate the galery, you'll need to add a cron with a user with correct rights :
 
 `*/5  *    * * *   /opt/librenms/weathermapHistory.sh  >> /dev/null 2>&1`
@@ -52,4 +54,10 @@ and the number of history files kept in the bash script.
 
 ## Thanks
 
-Thanks [jwhitaker](http://forums.cacti.net/memberlist.php?mode=viewprofile&u=29739) for the initial idea and [chatGPT](https://chat.openai.com/chat) for some snippets ;-)
+Many thanks to
+
+- [Howard Jones](https://www.network-weathermap.com/) for creating the fabulous php weathermap
+- [jwhitaker](http://forums.cacti.net/memberlist.php?mode=viewprofile&u=29739) for the initial idea 
+- and [chatGPT](https://chat.openai.com/chat) for some snippets ;-)
+
+
