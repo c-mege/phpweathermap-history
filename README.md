@@ -37,7 +37,7 @@ NODE Historique
         INFOURL http://10.201.10.34/plugins/Weathermap/output/history/cameras/index.html
         POSITION 1226 26
 ```
-
+The url will have to be adapted for each weathermap you generate.
 
 ## Thanks
 
