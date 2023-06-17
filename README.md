@@ -4,6 +4,8 @@ Based on an initial idea from jwhitaker on [cacti forums](https://forums.cacti.n
 
 It parses all the images generated maps in a source directory, archive them, and creates a web page galery showing them with dated links, and can also animate them.
 
+![image](./weathermap_history.png)
+
 ## Installation
 
 *you must have a phpweathermap working and generating maps for this script to work*
